@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "424043460138",
+    "firebase_url": "https://smartagro-283f0.firebaseio.com",
+    "project_id": "smartagro-283f0",
+    "storage_bucket": "smartagro-283f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424043460138:android:d979bbb562211eb2faf553",
+        "android_client_info": {
+          "package_name": "com.beepeen.smartagro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424043460138-ri2mbf1q9j8oe8mrlbqubf01drjtrafo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOd9r3b_XSlPP9tPl63IamPgK1RmG64Wk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424043460138-ri2mbf1q9j8oe8mrlbqubf01drjtrafo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
