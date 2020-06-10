@@ -55,9 +55,9 @@ class _ResultsState extends State<Results> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Text(
-                        'Welcome to SmartAgro',
+                        'SmartAgro',
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontFamily: 'Righteous',
                           color: Colors.grey[300],
                         ),
@@ -166,33 +166,31 @@ class _ResultsState extends State<Results> {
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: Flexible(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: <Widget>[
-                  TrendingCart(
-                    url: 'images/maize.jpg',
-                    name: 'Maize ( मकै )',
-                    price: 'NRs. 250.0 /kg',
-                  ),
-                  TrendingCart(
-                    url: 'images/potato.jpg',
-                    name: 'Potato ( आलु )',
-                    price: 'NRs. 200.0 /kg',
-                  ),
-                  TrendingCart(
-                    url: 'images/millet.jpg',
-                    name: 'Millet ( कोदो )',
-                    price: 'NRs. 100.0 /kg',
-                  ),
-                  TrendingCart(
-                    url: 'images/tomaato.jpg',
-                    name: 'Tomato ( टमाटर  )',
-                    price: 'NRs. 250.0 /kg',
-                  ),
-                ],
-              ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                TrendingCart(
+                  url: 'images/maize.jpg',
+                  name: 'Maize ( मकै )',
+                  price: 'NRs. 250.0 /kg',
+                ),
+                TrendingCart(
+                  url: 'images/potato.jpg',
+                  name: 'Potato ( आलु )',
+                  price: 'NRs. 200.0 /kg',
+                ),
+                TrendingCart(
+                  url: 'images/millet.jpg',
+                  name: 'Millet ( कोदो )',
+                  price: 'NRs. 100.0 /kg',
+                ),
+                TrendingCart(
+                  url: 'images/tomaato.jpg',
+                  name: 'Tomato ( टमाटर  )',
+                  price: 'NRs. 250.0 /kg',
+                ),
+              ],
             ),
           ),
         ),

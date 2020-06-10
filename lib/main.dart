@@ -6,7 +6,6 @@ import 'package:smartagro/Screens/messagescreen.dart';
 import 'package:smartagro/Screens/store.dart';
 import 'package:smartagro/Screens/store2.dart';
 import 'Screens/submitScreen.dart';
-String DateNow;
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
