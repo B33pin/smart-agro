@@ -18,6 +18,17 @@ class _SubmitScreenState extends State<SubmitScreen> {
   String message;
   String datepass;
 
+  Future<Null> _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+      });
+  }
   void _onLoading() {
     showDialog(
       context: context,
@@ -40,21 +51,25 @@ class _SubmitScreenState extends State<SubmitScreen> {
       },
     );
     new Future.delayed(new Duration(seconds: 2), () {
-      Navigator.of(context, rootNavigator: true).pop();
+      Navigator.pop(context); //pop dialog
+      _login();
     });
   }
-  Future<Null> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
-      setState(() {
-        selectedDate = picked;
-      });
+  _login(){
+    _firestore.collection('messages').add({
+      'text': 'I need a PH test request!',
+      'date': DateTime.now().toIso8601String().toString(),
+      'isme': true
+    });
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (c, a1, a2) => MyApp(counter: 3,test: 'hello'),
+        transitionsBuilder: (c, anim, a2, child) => FadeTransition(opacity: anim, child: child),
+        transitionDuration: Duration(milliseconds: 1000),
+      ),
+    );
   }
-
   @override
   Widget build(BuildContext context) {
     return Container(width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height,padding: EdgeInsets.fromLTRB(20, 30, 10, 0),
@@ -142,28 +157,15 @@ class _SubmitScreenState extends State<SubmitScreen> {
                               });
                             }),
                       ),
-                      GestureDetector(onTap: (){},child: Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text("Don't have ph? Select 0, ", style: TextStyle(fontFamily: 'Righteous'),),
                           GestureDetector(onTap: (){
-                            _onLoading();
-                            _firestore.collection('messages').add({
-                              'text': 'I need a PH test request!',
-                              'date': DateTime.now().toIso8601String().toString(),
-                              'isme': true
-                            });
-                            Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        pageBuilder: (c, a1, a2) => MyApp(counter: 3,test: 'hello'),
-                        transitionsBuilder: (c, anim, a2, child) => FadeTransition(opacity: anim, child: child),
-                        transitionDuration: Duration(milliseconds: 1000),
-                      ),
-                    );
+                           _onLoading();
                           },child: Text(" Request here!", style: TextStyle(fontFamily: 'Righteous',color: Colors.blue),)),
                         ],
-                      )),
+                      ),
                       SizedBox(height: 7,),
                     ],
                   )),

@@ -51,6 +51,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          resizeToAvoidBottomPadding: false,
             floatingActionButton: widget.date!=null?null:widget.test!=null?null:_selectedIndex==0?FloatingActionButton(
               hoverColor: Colors.black,
               elevation: 10,

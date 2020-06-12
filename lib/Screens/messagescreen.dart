@@ -21,46 +21,45 @@ class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     final MessageTextController= TextEditingController();
-    return Container( child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        messageStream(),
-        Container(
-          decoration: kMessageContainerDecoration,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: TextField(
-                  controller: MessageTextController,
-                  onChanged: (value) {
-                    message = value;
-                  },
-                  decoration: kMessageTextFieldDecoration,
-                ),
-              ),
-              FlatButton(
-                onPressed: () {
-                  test = true;
-                    MessageTextController.clear();
-                  _firestore.collection('messages').add({
-                    'text': message,
-                    'date': DateTime.now().toIso8601String().toString(),
-                    'isme': true
+              messageStream(),
+              Container(
+                decoration: kMessageContainerDecoration,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: TextField(
+                        controller: MessageTextController,
+                        onChanged: (value) {
+                          message = value;
+                        },
+                        decoration: kMessageTextFieldDecoration,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 0,horizontal: 20),
+                      child: GestureDetector(onTap: (){test = true;
+                      MessageTextController.clear();
+                      message!=null?_firestore.collection('messages').add({
+                        'text': message,
+                        'date': DateTime.now().toIso8601String().toString(),
+                        'isme': true
 
-                  });
-                },
-                child: Text(
-                  'Send',
-                  style: kSendButtonTextStyle,
+                      }):null;
+                      message=null;},child: Icon(Icons.send,color: Colors.blue,)),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-        ),
-      ],
-    ),);
+    );
+
   }
 }
   class messageStream extends StatelessWidget {
