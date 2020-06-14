@@ -39,7 +39,7 @@ class _Store2State extends State<Store2> {
           child:Column(
             children: <Widget>[
               SizedBox(height: 10,),
-              Text('BHAKTAPUR-WAREHOUSE',style: TextStyle(color: Colors.grey[300],fontFamily: 'Righteous',fontSize: 20,decoration: TextDecoration.underline),),
+              Text('Gulmi-ColdHouse',style: TextStyle(color: Colors.grey[300],fontFamily: 'Righteous',fontSize: 20,decoration: TextDecoration.underline),),
               Center(
                   child: PieChart(
                     dataMap: dataMap,

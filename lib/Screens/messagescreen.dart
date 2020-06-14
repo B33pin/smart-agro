@@ -32,6 +32,7 @@ class _MessageScreenState extends State<MessageScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    Icon(Icons.photo,color: Colors.blue,),
                     Expanded(
                       child: TextField(
                         controller: MessageTextController,
@@ -48,7 +49,7 @@ class _MessageScreenState extends State<MessageScreen> {
                       message!=null?_firestore.collection('messages').add({
                         'text': message,
                         'date': DateTime.now().toIso8601String().toString(),
-                        'isme': true
+                        'isme': false
 
                       }):null;
                       message=null;},child: Icon(Icons.send,color: Colors.blue,)),

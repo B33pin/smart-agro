@@ -17,19 +17,19 @@ class WareHouseModel {
 
 final List<WareHouseModel> warehouses = [
   WareHouseModel(
-      warehousename: 'KATHMANDU-WAREHOUSE',
-      address: '34-Kritipur, KTM',
+      warehousename: 'Arghakhanchi-ColdHouse',
+      address: 'Sandhikharka, Arghakhanchi',
       description:
-      'Warehouse located in Kathmandu for managing food supply chain within and outside district',
-      locationCoords:  LatLng(27.6630, 85.2774),
+      'Warehouse located in Arghakhanchi for managing food supply chain',
+      locationCoords:  LatLng(27.9650, 83.1435),
       thumbNail: 'https://venturebeat.com/wp-content/uploads/2019/11/groceries-1.jpg?fit=400%2C267&strip=all'
   ),
   WareHouseModel(
-      warehousename: 'BHAKTAPUR-WAREHOUSE',
-      address: '12-Pepsicola, Bhaktapur',
+      warehousename: 'Gulmi-ColdHouse',
+      address: 'Resunga, Gulmi',
       description:
-      'Warehouse located in Bhaktapur for managing food supply chain within and outside district',
-      locationCoords: LatLng(27.6889, 85.3602),
+      'Warehouse located in Gulmi for managing food supply chain within and outside district',
+      locationCoords: LatLng(28.0889, 83.2934),
       thumbNail: 'https://www.vanco.be/img/carousel-img/Herve/HERVE-9022.jpg'
   ),
   WareHouseModel(
